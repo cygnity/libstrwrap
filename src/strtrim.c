@@ -1,5 +1,5 @@
 /*
- Copyright 2018 Aaron Liu <dexin@informedia.net.cn>
+ Copyright 2018-2019 Aaron Liu <dexin@informedia.net.cn>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU Lesser General Public License as published by
@@ -36,6 +36,9 @@ strtrim(char * str)
 
   while (e != s && isspace(*e))
     *e-- = '\0';
+
+  if (s == e && isspace(*s))
+    *s = '\0';
 
   if (str != s)
     memmove(str, s, strlen(s) + 1);
